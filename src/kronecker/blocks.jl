@@ -12,6 +12,9 @@ function blkdiag(blocks::Array{Array{Pol{T}, 2}, 1}) where {T<:Number}
     return J
 end
 
+"""
+creates the matrix block of size n×(n+1) corresponding to column index n
+"""
 function colBlock(n::Int)
     var = Pol([0, 1])
     J = zeros(Pol{Int}, n, n+1)
@@ -24,6 +27,9 @@ end
 
 colBlock(arr::AbstractArray{Int, 1}) = blkdiag(colBlock.(arr))
 
+"""
+creates the matrix block of size (n+1)×n corresponding to row index n
+"""
 function rowBlock(n::Int)
     var = Pol([0, 1])
     J = zeros(Pol{Int}, n+1, n)
@@ -36,6 +42,9 @@ end
 
 rowBlock(arr::AbstractArray{Int, 1}) = blkdiag(rowBlock.(arr))
 
+"""
+creates the block matrix corresponding to infinite eigenvalue of multiplicity n
+"""
 function infBlock(n::Int)
     var = Pol([0, 1])
     J = zeros(Pol{Int}, n, n)
@@ -49,6 +58,9 @@ end
 
 infBlock(arr::AbstractArray{Int, 1}) = blkdiag(infBlock.(arr))
 
+"""
+creates the block matrix of size n×n corresponding to eigenvalue λ
+"""
 function eigBlock(λ::T, n::Int) where {T<:Number}
     var = Pol([0, 1])
     J = zeros(Pol{T}, n, n)

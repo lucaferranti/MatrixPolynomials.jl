@@ -30,6 +30,9 @@ for op in (:+, :-, :*)
     @eval Base.$op(b::Pol, A::AbstractArray) = [$op(b, a) for a in A]
 end
 
+"""
+computes the companion pencil Bx-A of the polynomial matrix P
+"""
 function toPencil(P::AbstractArray{Pol{T}, N}) where {T<:Number, N}
     k = deg(P)
 

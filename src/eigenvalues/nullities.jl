@@ -3,6 +3,13 @@ function colNullities(P::AbstractArray, tol=0)
     return colNullities(A, B, tol)
 end
 
+"""
+    e, d, Ar, Br = colNullities(A, B, tol=0)
+computes the column nullities of the pencil Bx-A.
+e = column nullities
+d =  nullities of infinite eigenvalue
+x*Br - Ar = reduced pencil containing only finite eigenvalues and row indices
+"""
 function colNullities(A::AbstractArray{T, N}, B::AbstractArray{T, N}, tol=0) where {T<:Number, N}
 
     r = rank(B, atol=tol)
@@ -45,6 +52,13 @@ function rowNullities(P::AbstractArray, tol=0)
     return rowNullities(A, B, tol)
 end
 
+"""
+    e, d, Ar, Br = colNullities(A, B, tol=0)
+computes the row nullities of the pencil Bx-A.
+e = row nullities
+d =  nullities of infinite eigenvalue
+x*Br - Ar = reduced pencil containing only finite eigenvalues and column indices
+"""
 function rowNullities(A::AbstractArray{T, N}, B::AbstractArray{T, N}, tol=0) where {T<:Number, N}
 
     r = rank(B, atol=tol)
