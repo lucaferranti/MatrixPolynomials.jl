@@ -73,7 +73,7 @@ julia> rowIndices(A)
  0
 ```
 
-Consider the matrix
+Consider the `14×16`matrix
 
 ![image](kcf.PNG)
 
@@ -129,6 +129,7 @@ the algorithm detects that numerical errors have occured the result is not relia
 ## References
 
 [1] VAN DOOREN, P. (1979) The computation of kronecker’s canonical form of a singular pencil. Linear Algebra and its Applications., 27, 103–140.
+
 [2] DE TERAN, F. E. A. (2014) Spectral equivalence of matrix polynomials and the index sum theorem. Linear Algebra and its Applications, 459, 264 – 333
 
 [version-img]: https://img.shields.io/badge/lifecycle-maturing-blue.svg
